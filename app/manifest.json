@@ -1,6 +1,7 @@
 {
   "name": "Smart ATG Dynamo",
-  "version": "0.22",
+  "sort_name": "Smart ATG",
+  "version": "0.23",
   "manifest_version": 2,
   "description": "Some features to improve Oracle ATG Dynamo usability",
   "icons": {
