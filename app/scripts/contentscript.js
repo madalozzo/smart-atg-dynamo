@@ -10,7 +10,7 @@ function injectJS(url){
   };
 }
 
-injectJS("scripts/jquery-1.11.3.min.js");
+//injectJS("scripts/jquery-1.11.3.min.js");
 injectJS("scripts/script.js");
 
 function sortItemDescriptorRowsByName() {
@@ -41,13 +41,20 @@ $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
 $('td:contains("XML value")').parent().find('pre').each(function(i, e) {hljs.highlightBlock(e)});
 
 //make some links
-$('.hljs-value').each(function( index ) {
+$('.hljs-value').slice(2).each(function( index ) {
   var itemDescriptor = $(this).text();
   var itemDescriptor = itemDescriptor.replace(/"/g, '');
   var cData =$(this).parent().next('span').text();
   cData = cData.replace('<![CDATA[', '');
   cData = cData.replace(']]>', '');
   $(this).attr("onclick", "addXml('print-item', '"+itemDescriptor+"', '"+cData+"')");
+});
+
+$('a[name=listItemDescriptors]').next().find('th').slice(4).each(function( index ) {
+  var imageSrcPrint = chrome.extension.getURL('images/print.png');
+  var imageSrcSearch = chrome.extension.getURL('images/search.png');
+  $(this).append('<img class="icon-print" id="' + $(this).text() + '" src="' + imageSrcPrint + '" />');
+  $(this).append('<img class="icon-search" id="' + $(this).text() + '" src="' + imageSrcSearch + '" />');
 });
 
 //move to xml
