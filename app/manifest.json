@@ -21,8 +21,8 @@
   "content_scripts": [
     {
       "matches": [
-          "http://*/dyn/admin/nucleus/*",
-          "https://*/dyn/admin/nucleus/*"
+          "http://*/dyn/admin/*",
+          "https://*/dyn/admin/*"
       ],
       "css": [
         "styles/hl.css",

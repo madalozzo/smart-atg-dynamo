@@ -36,6 +36,35 @@ function sortItemDescriptorRowsByName() {
 }
 sortItemDescriptorRowsByName();
 
+function sortTimePerformanceDataByName() {
+  var listTimePerformanceDataLink = $('a[name=timeperfdata]');
+  
+  var table = listTimePerformanceDataLink.parent().next();
+  
+  var originalRows = table.find('tr:gt(1)')
+
+  var tbody = originalRows.parent('tbody');
+  
+  console.log(tbody);
+    
+  originalRows.remove();
+
+  originalRows.sort(function(a,b) {
+      var aName = $(a).find('td').text().toLowerCase();
+      var bName = $(b).find('td').text().toLowerCase();
+
+      if (aName < bName) {
+          return -1;
+      } else if (bName<aName) {
+          return 1;
+      }
+          return 0;
+  });
+  originalRows.appendTo(tbody);
+  
+}
+sortTimePerformanceDataByName();
+
 // colorize xml output and XML repository definition
 $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
 $('td:contains("XML value")').parent().find('pre').each(function(i, e) {hljs.highlightBlock(e)});
