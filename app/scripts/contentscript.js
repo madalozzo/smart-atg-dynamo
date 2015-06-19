@@ -44,8 +44,6 @@ function sortTimePerformanceDataByName() {
   var originalRows = table.find('tr:gt(1)')
 
   var tbody = originalRows.parent('tbody');
-  
-  console.log(tbody);
     
   originalRows.remove();
 
