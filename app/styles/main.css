@@ -1,11 +1,7 @@
 body {
   margin-left: 8px;
 }
-.icon-print{
-  margin-left: 3px;
-  cursor: pointer;
-}
-.icon-search{
+.icon-print, .icon-search, .icon-remove{
   margin-left: 3px;
   cursor: pointer;
 }

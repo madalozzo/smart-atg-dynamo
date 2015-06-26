@@ -18,7 +18,19 @@ function addXml(operation, itemDescriptor, id){
       }, 300);
     }
   }
-  else if (operation === 'query-item') {
+  if (operation === 'remove-item'){
+    if(confirm("remove-item? Are you sure?")){
+      $('[name=xmltext]').val($('[name=xmltext]').val() + '<remove-item remove-references-to=\"true\" item-descriptor=\"' + itemDescriptor + '\" id=\"' + id + '\"/>\n' );
+      if(id === ''){
+        $('[name=xmltext]').focus();
+        $('[name=xmltext]').selectRange(totalLenght + 64 + itemDescriptor.length);
+        $('html, body').animate({
+            scrollTop: $('[name=xmltext]').offset().top
+        }, 300);
+      }
+    }
+  }
+  else if (operation === 'query-items') {
     $('[name=xmltext]').val($('[name=xmltext]').val() + '<query-items item-descriptor=\"' + itemDescriptor + '\"> = \"\"</query-items>\n' );
     $('[name=xmltext]').focus();
     $('[name=xmltext]').selectRange(totalLenght + 32 + itemDescriptor.length);
@@ -44,12 +56,14 @@ $.fn.selectRange = function(start, end) {
     });
 };
 
-
 $( document ).ready(function() {
   $(".icon-print").click(function() {
     addXml("print-item", $(this).attr('id'), "");
   });
   $(".icon-search").click(function() {
-    addXml("query-item", $(this).attr('id'), "");
+    addXml("query-items", $(this).attr('id'), "");
+  })
+  $(".icon-remove").click(function() {
+    addXml("remove-item", $(this).attr('id'), "");
   })
 });

@@ -38,13 +38,13 @@ sortItemDescriptorRowsByName();
 
 function sortTimePerformanceDataByName() {
   var listTimePerformanceDataLink = $('a[name=timeperfdata]');
-  
+
   var table = listTimePerformanceDataLink.parent().next();
-  
+
   var originalRows = table.find('tr:gt(1)')
 
   var tbody = originalRows.parent('tbody');
-    
+
   originalRows.remove();
 
   originalRows.sort(function(a,b) {
@@ -59,7 +59,7 @@ function sortTimePerformanceDataByName() {
           return 0;
   });
   originalRows.appendTo(tbody);
-  
+
 }
 sortTimePerformanceDataByName();
 
@@ -77,12 +77,17 @@ $('.hljs-value').slice(2).each(function( index ) {
   $(this).attr("onclick", "addXml('print-item', '"+itemDescriptor+"', '"+cData+"')");
 });
 
+//insert action icons
 $('a[name=listItemDescriptors]').next().find('th').slice(4).each(function( index ) {
   var imageSrcPrint = chrome.extension.getURL('images/print.png');
   var imageSrcSearch = chrome.extension.getURL('images/search.png');
-  $(this).append('<img class="icon-print" id="' + $(this).text() + '" src="' + imageSrcPrint + '" />');
-  $(this).append('<img class="icon-search" id="' + $(this).text() + '" src="' + imageSrcSearch + '" />');
+  var imageSrcRemove = chrome.extension.getURL('images/remove.png');
+  $(this).append('<img class="icon-print" id="' + $(this).text() + '" src="' + imageSrcPrint + '" title="print-item" />');
+  $(this).append('<img class="icon-search" id="' + $(this).text() + '" src="' + imageSrcSearch + '" title="query-items"  />');
+  $(this).append('<img class="icon-remove" id="' + $(this).text() + '" src="' + imageSrcRemove + '" title="remove-item" />');
 });
+//change text-box size
+$('[name=xmltext]').attr('cols',130);
 
 //move to xml
 $('html, body').animate({

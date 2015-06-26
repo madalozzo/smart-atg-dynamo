@@ -1,7 +1,7 @@
 {
   "name": "Smart ATG Dynamo",
   "short_name": "Smart ATG",
-  "version": "0.65",
+  "version": "0.70",
   "manifest_version": 2,
   "description": "Some features to improve Oracle ATG Dynamo usability",
   "icons": {
@@ -15,6 +15,7 @@
   "web_accessible_resources": [
     "scripts/jquery-1.11.3.min.js",
     "images/print.png",
+    "images/remove.png",
     "images/search.png",
     "scripts/script.js"
   ],

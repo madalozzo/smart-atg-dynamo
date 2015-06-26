@@ -5,7 +5,7 @@
 Work in progress...
 
 This is a Chrome extension to improve Oracle ATG Dynamo usability. For now it can do:
-* Buttons to pre-create XML print-item and query-items in item-descriptor list
+* Buttons to pre-create XML print-item, query-items and remove-item in item-descriptor list
 * Print-item XML syntax highlight
 * Automatic scroll to XML after request
 * Sort item descriptors
