@@ -12,12 +12,14 @@ This is a Chrome extension to improve Oracle ATG Dynamo usability. For now it ca
 * Create a print item when XML item-descriptor name is clicked (you should change the item-descriptor sometimes)
 * Sort Time Performance Data items at Performance Monitor page (author eduardofbs)
 
-# Images:
-* Repository
+### Images:
+* Repository:  
 ![Repository](https://github.com/madalozzo/smart-atg-dynamo/blob/master/imgs/Repository.png)
-* XML Highlight
+
+* XML Highlight:  
 ![XML Highlight](https://github.com/madalozzo/smart-atg-dynamo/blob/master/imgs/XML%20highlight.png)
-* Performance Monitor
+
+* Performance Monitor:  
 ![Performance Monitor](https://github.com/madalozzo/smart-atg-dynamo/blob/master/imgs/Performance%20Monitor.png)
 
 ATG versions tested:
